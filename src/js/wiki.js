@@ -10,78 +10,11 @@ $(document).ready(function () {
 
     var wikiUrl = 'http://en.wikipedia.org/wiki/';
 
-    var series = [
-        {
-            title: 'The Big Bang Theory',
-            wikiTitles: 'The_Big_Bang_Theory_(season_6)',
-            links: {
-                'kinox.to EN': 'http://kinox.to/Stream/The_Big_Bang_Theory-1.html',
-                'kinox.to DE_subbed': 'http://kinox.to/Stream/The_Big_Bang_Theory_german_subbed.html'
-            }
-        },
-        {
-            title: 'How I Met Your Mother',
-            wikiTitles: 'How_I_Met_Your_Mother_(season_8)',
-            links: {
-                'kinox.to EN': 'http://kinox.to/Stream/How_I_Met_Your_Mother-1.html',
-                'kinox.to DE_subbed': 'http://kinox.to/Stream/How_I_Met_Your_Mother_german_subbed.html'
-            }
-        },
-        {
-            title: 'Two and a Half Men',
-            wikiTitles: 'Two_and_a_Half_Men_(season_10)',
-            links: {
-                'kinox.to EN': 'http://kinox.to/Stream/Two_and_a_Half_Men-2.html',
-                'kinox.to DE_subbed': 'http://kinox.to/Stream/Two_and_a_Half_Men_german_subbed.html'
-            }
-        },
-        {
-            title: 'The Walking Dead',
-            wikiTitles: 'The_Walking_Dead_(season_3)',
-            links: {
-                'kinox.to EN': 'http://kinox.to/Stream/The_Walking_Dead.html',
-                'kinox.to DE_subbed': 'http://kinox.to/Stream/The_Walking_Dead_german_subbed.html'
-            }
-        },
-        {
-            title: 'The Mentalist',
-            wikiTitles: 'The_Mentalist_(season_5)',
-            links: {
-                'kinox.to EN': 'http://kinox.to/Stream/The_Mentalist-1.html',
-                'kinox.to DE_subbed': 'http://kinox.to/Stream/The_Mentalist_german_subbed.html'
-            }
-        },
-        {
-            title: 'Dexter',
-            wikiTitles: 'Dexter_(season_7)',
-            links: {
-                'kinox.to EN': 'http://kinox.to/Stream/Dexter-1.html',
-                'kinox.to DE_subbed': 'http://kinox.to/Stream/Dexter_german_subbed.html'
-            }
-        },
-        {
-            title: 'Breaking Bad',
-            wikiTitles: 'Breaking_Bad_(season_5)',
-            links: {
-                'kinox.to EN': 'http://kinox.to/Stream/Breaking_Bad-1.html',
-                'kinox.to DE_subbed': 'http://kinox.to/Stream/Breaking_Bad_german_subbed.html'
-            }
-        },
-        {
-            title: 'Grimm',
-            wikiTitles: 'Grimm_(season_2)',
-            links: {
-                'kinox.to EN': 'http://kinox.to/Stream/Grimm.html',
-                'kinox.to DE_subbed': 'http://kinox.to/Stream/Grimm-1.html'
-            }
-        }
-    ];
-
     var actualSeries = 0;
 
     function getSeriesData(callback) {
 
-        var sData = series[actualSeries];
+        var sData = window.series[actualSeries];
         if (sData === undefined) {
             return false;
         }
@@ -157,7 +90,7 @@ $(document).ready(function () {
 
     var callback = function (data) {
 
-        var sData = series[actualSeries];
+        var sData = window.series[actualSeries];
         var html = '<section>';
         //html += '<h2><a href="http://stiebel.lc:8888/test.php">' + sData.title + '</a></h2><table>';
         if (sData.links) {
